@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Portafolio</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu a {
+  display: block;
+  margin: 20px;
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
+}
+
+.menu a:hover {
+  opacity: 0.6;
+}
+
+.section {
+  display: none;
+  text-align: center;
+}
+
+.section a {
+  display: block;
+  margin: 15px;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+}
+
+.back {
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+</style>
+
+<script>
+function showSection(id) {
+  document.getElementById('main').style.display = 'none';
+  document.getElementById(id).style.display = 'block';
+}
+
+function goBack() {
+  document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+  document.getElementById('main').style.display = 'block';
+}
+</script>
+
+</head>
+<body>
+
+<div id="main" class="menu">
+  <a href="#" onclick="showSection('exp')">EXPERIENCIA</a>
+  <a href="#" onclick="showSection('val')">VALORES</a>
+  <a href="#" onclick="showSection('com')">COMPROMISOS</a>
+</div>
+
+<div id="exp" class="section">
+  <a href="#" class="back" onclick="goBack()">← VOLVER</a>
+  <a href="#">Experiencia profesional</a>
+  <a href="#">Experiencia académica</a>
+  <a href="#">Proyectos</a>
+</div>
+
+<div id="val" class="section">
+  <a href="#" class="back" onclick="goBack()">← VOLVER</a>
+  <a href="#">Disciplina</a>
+  <a href="#">Ética</a>
+  <a href="#">Curiosidad</a>
+</div>
+
+<div id="com" class="section">
+  <a href="#" class="back" onclick="goBack()">← VOLVER</a>
+  <a href="#">Responsabilidad</a>
+  <a href="#">Aprendizaje continuo</a>
+  <a href="#">Impacto real</a>
+</div>
+
+</body>
+</html>
+first version
