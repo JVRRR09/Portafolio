@@ -18,6 +18,11 @@ body {
   height: 100vh;
 }
 
+/* Glow suave global */
+a {
+  text-shadow: 0 0 12px rgba(255,255,255,0.15);
+}
+
 .menu {
   text-align: center;
 }
@@ -35,30 +40,43 @@ body {
   opacity: 0.6;
 }
 
+/* Secciones */
 .section {
   display: none;
   text-align: center;
 }
 
+/* Submenús */
 .section a {
   display: block;
   margin: 15px;
   font-size: 22px;
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
+/* Tercer nivel */
+.subsection a {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* Volver */
 .back {
   margin-bottom: 40px;
   font-size: 16px;
   letter-spacing: 1px;
+  font-weight: 500;
 }
 </style>
 
 <script>
 function showSection(id) {
-  document.getElementById('main').style.display = 'none';
+  document.querySelectorAll('.menu, .section').forEach(el => {
+    el.style.display = 'none';
+  });
   document.getElementById(id).style.display = 'block';
 }
 
@@ -71,20 +89,31 @@ function goBack() {
 </head>
 <body>
 
+<!-- MAIN MENU -->
 <div id="main" class="menu">
   <a href="#" onclick="showSection('exp')">EXPERIENCIA</a>
   <a href="#" onclick="showSection('val')">VALORES</a>
   <a href="#" onclick="showSection('com')">COMPROMISOS</a>
 </div>
 
+<!-- EXPERIENCIA -->
 <div id="exp" class="section">
   <a href="#" class="back" onclick="goBack()">← VOLVER</a>
-  <a href="#">BARISTA</a>
+  <a href="#" onclick="showSection('barista')">BARISTA</a>
   <a href="#">CALL CENTER BILINGÜE</a>
   <a href="#">PROYECTOS COMUNITARIOS</a>
   <a href="#">DISEÑOS</a>
 </div>
 
+<!-- SUBSUB: BARISTA -->
+<div id="barista" class="section subsection">
+  <a href="#" class="back" onclick="showSection('exp')">← EXPERIENCIA</a>
+  <a href="#">CAFETERÍAS</a>
+  <a href="#">MÉTODOS</a>
+  <a href="#">SERVICIO</a>
+</div>
+
+<!-- VALORES -->
 <div id="val" class="section">
   <a href="#" class="back" onclick="goBack()">← VOLVER</a>
   <a href="#">HONESTIDAD</a>
@@ -92,6 +121,7 @@ function goBack() {
   <a href="#">CREATIVIDAD</a>
 </div>
 
+<!-- COMPROMISOS -->
 <div id="com" class="section">
   <a href="#" class="back" onclick="goBack()">← VOLVER</a>
   <a href="#">HIGIENE</a>
