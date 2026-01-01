@@ -51,7 +51,7 @@ a {
   display: block;
   margin: 15px;
   font-size: 22px;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: 800;
   letter-spacing: 1px;
@@ -110,11 +110,17 @@ function goBack() {
 <!-- SUBSUB: BARISTA -->
 <div id="barista" class="section subsection">
   <a href="#" class="back" onclick="showSection('exp')">← EXPERIENCIA</a>
-  <a href="#">CASA ALICIA Y AUTOR</a>
-  <a href="#">MÉTODOS</a>
-  <a href="#">SERVICIO</a>
+  <a href="#" onclick="showSection('cas')">CASA ALICIA</a>
+  <a href="#">AUTOR</a>
 </div>
-
+  
+<!-- SUBSUBSUB: CASA ALICIA -->
+<div id="cas" class="section subsection">
+  <a href="#" class="back" onclick="showSection('cas')">← CASA ALICIA</a>
+  <a href="#">CASA ALICIA balablabal</a>
+  
+</div>
+  
 <!-- VALORES -->
 <div id="val" class="section">
   <a href="#" class="back" onclick="goBack()">← VOLVER</a>
