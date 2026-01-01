@@ -9,7 +9,8 @@ body {
   margin: 0;
   background: black;
   color: white;
-  font-family:  Helvetica
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
 
   display: flex;
   justify-content: center;
@@ -27,6 +28,7 @@ body {
   font-size: 28px;
   text-decoration: none;
   color: white;
+  letter-spacing: 2px;
 }
 
 .menu a:hover {
@@ -44,11 +46,13 @@ body {
   font-size: 22px;
   color: white;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .back {
   margin-bottom: 40px;
   font-size: 16px;
+  letter-spacing: 1px;
 }
 </style>
 
@@ -62,6 +66,8 @@ function goBack() {
   document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
   document.getElementById('main').style.display = 'block';
 }
+</script>
+
 </head>
 <body>
 
