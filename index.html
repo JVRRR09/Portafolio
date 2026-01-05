@@ -21,13 +21,15 @@ body {
 
 /* Glow suave global */
 a {
-  text-shadow: 0 0 12px rgba(255,255,255,0.15);
+  text-shadow: 0 0 30px rgba(255,255,255,0.15);
 }
 
 .menu {
   text-align: center;
 }
-
+.menu, .section {
+  transition: opacity 0.3s ease;
+}
 .menu a {
   display: block;
   margin: 20px;
@@ -105,6 +107,7 @@ function goBack() {
   <a href="#" onclick="showSection('exp')">EXPERIENCIA</a>
   <a href="#" onclick="showSection('val')">VALORES</a>
   <a href="#" onclick="showSection('com')">COMPROMISOS</a>
+  <a href="#" onclick="showSection('vis')">PORTAFOLIO VISUAL</a>
   <a href="#" onclick="showSection('con')">CONTACTO</a>
 </div>
 
@@ -124,20 +127,11 @@ function goBack() {
   <a href="#" onclick="showSection('cas')">CASA ALICIA</a>
   <a href="#">AUTOR</a>
 </div>
-  
-<!-- SUBSUBSUB: CASA ALICIA -->
-<div id="cas" class="section subsection">
-  <a href="#" class="back" onclick="showSection('exp')">← EXPERIENCIA</a>
-  <img src="casaaliciaexp.jpg" class="photo"> 
-
-  
-</div>
-  
+    
 <!-- VALORES -->
 <div id="val" class="section">
   <a href="#" class="back" onclick="goBack()">← VOLVER</a>
   <a href="#">HONESTIDAD</a>
-  <a href="#">ÉTICA</a>
   <a href="#">CREATIVIDAD</a>
   <a href="#">HOSPITALIDAD ATENTA</a>
   <a href="#">CURIOSIDAD TÉCNICA</a>
@@ -152,6 +146,14 @@ function goBack() {
   <a href="#">PUNTUALIDAD</a>
   <a href="#">ENTREGA</a>
 </div>
+
+<!-- PORTAFOLIO VISUAL -->
+<div id="vis" class="section">
+  <a href="#" class="back" onclick="goBack()">← VOLVER</a>
+  <img src="casaaliciaexp.jpg" class="photo">  
+</div>
+  
+    
   
 <!-- CONTACTO -->
 <div id="con" class="section">
