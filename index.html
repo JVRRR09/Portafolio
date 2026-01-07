@@ -6,85 +6,144 @@
 <title>Portafolio</title>
 
 <style>
+
+/* =========================
+   BASE / RESET
+========================= */
+
 body {
   margin: 0;
-  background: black;
+  background: #000;
   color: white;
   font-family: Helvetica, Arial, sans-serif;
-  font-weight: 1000;
+  font-weight: 700;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
+  min-height: 100svh;
+
+  /* Glow global elegante */
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 30px rgba(255,255,255,0.1);
 }
 
-/* Glow suave global */
-a {
-  text-shadow: 0 0 30px rgba(255,255,255,0.15);
-}
+/* =========================
+   CONTENEDOR
+========================= */
 
-.menu {
-  text-align: center;
-}
-.menu, .section {
-  transition: opacity 0.8s ease;
-}
-.menu a {
-  display: block;
-  margin: 20px;
-  font-size: 28px;
-  text-decoration: none;
-  color: white;
-  letter-spacing: 2px;
-}
-
-.menu a:hover {
-  opacity: 0.6;
-}
-
-/* Secciones */
-.section {
-  display: none;
-  text-align: center;
-}
-
-/* Submenús */
-.section a {
-  display: block;
-  margin: 15px;
-  font-size: 22px;
-  color: white;
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-/* Tercer nivel */
-.subsection a {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-/* Volver */
-.back {
-  margin-bottom: 40px;
-  font-size: 16px;
-  letter-spacing: 1px;
-  font-weight: 800;
-}
- .photo {
-  width: 260px;
-  margin-bottom: 50px;
-  opacity: 0.75;
-}
 .container {
   width: 100%;
   max-width: 500px;
   text-align: center;
 }
-</style>
 
+/* =========================
+   MENÚ PRINCIPAL
+========================= */
+
+.menu {
+  text-align: center;
+  transition: opacity 0.6s ease;
+}
+
+.menu a {
+  display: block;
+  margin: 28px;
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 14px rgba(255,255,255,0.25),
+    0 0 40px rgba(255,255,255,0.12);
+}
+
+.menu a:hover {
+  opacity: 0.65;
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.35),
+    0 0 55px rgba(255,255,255,0.18);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section {
+  display: none;
+  text-align: center;
+  transition: opacity 0.6s ease;
+}
+
+/* Submenús */
+.section a {
+  display: block;
+  margin: 16px;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.18),
+    0 0 24px rgba(255,255,255,0.08);
+}
+
+.section a:hover {
+  opacity: 0.7;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.28),
+    0 0 36px rgba(255,255,255,0.15);
+}
+
+/* =========================
+   TERCER NIVEL
+========================= */
+
+.subsection a {
+  font-size: 18px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* =========================
+   BOTÓN VOLVER
+========================= */
+
+.back {
+  margin-bottom: 40px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* =========================
+   DISPONIBILIDAD
+========================= */
+
+.schedule p {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   IMÁGENES
+========================= */
+
+.photo {
+  width: 260px;
+  margin-bottom: 50px;
+  opacity: 0.75;
+}
+
+</style>
 <script>
 function showSection(id) {
   document.querySelectorAll('.menu, .section').forEach(el => {
@@ -108,6 +167,7 @@ function goBack() {
   <a href="#" onclick="showSection('val')">VALORES</a>
   <a href="#" onclick="showSection('com')">COMPROMISOS</a>
   <a href="#" onclick="showSection('vis')">PORTAFOLIO VISUAL</a>
+  <a href="#" onclick="showSection('disp')">DISPONIBILIDAD</a>
   <a href="#" onclick="showSection('con')">CONTACTO</a>
 </div>
 
@@ -154,10 +214,20 @@ function goBack() {
   <img src="Hackaton-41.jpeg" class="photo"> 
   <img src="IMG_4810.png" class="photo">  
   <img src="IMG_3581.PNG" class="photo">  
-  
 </div>
-  
-    
+
+<!-- PORTAFOLIO VISUAL -->
+<div id="disp" class="section">
+  <a href="#" class="back" onclick="goBack()">← VOLVER</a>
+   <p>LUNES A VIERNES</p>
+   <p>14:00 – 22:30</p>
+
+   <p>SÁBADOS</p>
+   <p>07:00 – 22:30</p>
+
+   <p>DOMINGOS</p>
+   <p>DISPONIBLE</p>
+</div>    
   
 <!-- CONTACTO -->
 <div id="con" class="section">
